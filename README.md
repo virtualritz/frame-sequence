@@ -2,7 +2,7 @@
 
 A simple parser for frame sequences strings.
 
-This will parse `str` describing a sequence of frames into
+This will parse a `str` describing a sequence of frames into
 a `Vec<isize>` containing individual frame numbers.
 
 Mainly intended/useful for rendering/animation applications.
