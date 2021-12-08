@@ -1,0 +1,8 @@
+PositiveNumber = { ASCII_DIGIT+ }
+Frame = { ("+" | "-")? ~ PositiveNumber }
+StepSymbol = { "@" }
+BinarySequenceSymbol = { "b" }
+FrameRange = { Frame ~ "-" ~ Frame ~ ( StepSymbol ~ ( PositiveNumber | BinarySequenceSymbol ) )? }
+FrameSequencePart = { FrameRange | Frame }
+FrameSequence = { FrameSequencePart ~ ( "," ~ FrameSequencePart )* }
+FrameSequenceString = {SOI ~ FrameSequence ~ EOI}
