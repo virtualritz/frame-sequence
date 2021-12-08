@@ -1,5 +1,5 @@
 [package]
-name = "frame_sequence_parser"
+name = "frame-sequence-parser"
 version = "0.1.0"
 edition = "2021"
 authors = ["Moritz Moeller <virtualritz@protonmail.com>"]
