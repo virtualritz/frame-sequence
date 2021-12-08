@@ -1,5 +1,5 @@
 [package]
-name = "frame-sequence-parser"
+name = "frame-sequence"
 version = "0.1.0"
 edition = "2021"
 authors = ["Moritz Moeller <virtualritz@protonmail.com>"]
@@ -9,7 +9,7 @@ license = "Apache-2.0 OR BSD-3-Clause OR MIT OR Zlib"
 description = "Turns frame sequence strings into lists of frame numbers."
 exclude = [".github/**/*", "crates/**/*"]
 readme = "README.md"
-documentation = "https://docs.rs/frame_sequence_parser/"
+documentation = "https://docs.rs/frame_sequence/"
 repository = "https://github.com/virtualritz/frame_sequence_parser/"
 
 [dependencies]

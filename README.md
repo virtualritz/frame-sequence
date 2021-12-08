@@ -1,4 +1,4 @@
-# `frame-sequence-parser`
+# `frame-sequence`
 
 A simple parser for frame sequences strings.
 
