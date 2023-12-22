@@ -1,6 +1,6 @@
 [package]
 name = "frame-sequence"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Moritz Moeller <virtualritz@protonmail.com>"]
 keywords = ["graphics", "rendering", "frames", "sequence", "parser"]
@@ -13,6 +13,6 @@ documentation = "https://docs.rs/frame_sequence/"
 repository = "https://github.com/virtualritz/frame_sequence_parser/"
 
 [dependencies]
-itertools = "0.10.3"
-pest = "2.1.3"
-pest_derive = "2.1.0"
+itertools = "0.12"
+pest = "2.7"
+pest_derive = "2.7"
