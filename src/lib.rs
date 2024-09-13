@@ -206,4 +206,18 @@ mod tests {
             frames.as_slice()
         );
     }
+    
+    #[test]
+    fn test_multi_sequence() {
+        use crate::parse_frame_sequence;
+        let frames = parse_frame_sequence("10-20@2,42-33@3").unwrap();
+        assert_eq!([10, 12, 14, 16, 18, 20, 42, 39, 36, 33], frames.as_slice());
+    }
+    
+    #[test]
+    fn test_multi_sequence_x() {
+        use crate::parse_frame_sequence;
+        let frames = parse_frame_sequence("10-20x2,42-33x3").unwrap();
+        assert_eq!([10, 12, 14, 16, 18, 20, 42, 39, 36, 33], frames.as_slice());
+    }
 }
