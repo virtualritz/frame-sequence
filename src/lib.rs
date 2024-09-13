@@ -3,7 +3,7 @@
 //! This will parse a [`str`] describing a sequence of frames into
 //! a [`Vec`]`<`[`isize`]`>` containing individual frame numbers.
 //!
-//! Mainly intended/useful for rendering/animation applications.
+//! Mainly intended/useful for rendering/animation/VFX applications.
 //!
 //! # Example Frame Sequence Strings
 //!
@@ -33,6 +33,10 @@
 //! the specified step size does not touch it:
 //!
 //! `80-70@4` ⟶ `[80, 76, 72]`
+//!
+//! # Nuke-Style Step Size Token
+//!
+//! Using `x` instead of `@` as the step size token separator also works.
 use itertools::Itertools;
 use pest::{
     error::Error,
@@ -49,9 +53,10 @@ struct FrameSequenceParser;
 /// Parse a frame sequence string into a [`Vec`]`<`[`isize`]`>` of frames.
 ///
 /// See the main page of the documentation for example `input` strings.
-pub fn parse_frame_sequence(input: &str) -> Result<Vec<isize>, Error<Rule>> {
+pub fn parse_frame_sequence(input: &str) -> Result<Vec<isize>, Box<Error<Rule>>> {
     FrameSequenceParser::parse(Rule::FrameSequenceString, input)
         .map(|token_tree| remove_duplicates(frame_sequence_token_tree_to_frames(token_tree)))
+        .map_err(|e| e.into())
 }
 
 fn chop(seq: &mut Vec<isize>, result: &mut Vec<isize>, elements: usize) {
@@ -206,14 +211,14 @@ mod tests {
             frames.as_slice()
         );
     }
-    
+
     #[test]
     fn test_multi_sequence() {
         use crate::parse_frame_sequence;
         let frames = parse_frame_sequence("10-20@2,42-33@3").unwrap();
         assert_eq!([10, 12, 14, 16, 18, 20, 42, 39, 36, 33], frames.as_slice());
     }
-    
+
     #[test]
     fn test_multi_sequence_x() {
         use crate::parse_frame_sequence;
