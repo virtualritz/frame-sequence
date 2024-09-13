@@ -35,3 +35,7 @@ The last frame of a sequence will be omitted if
 the specified step size does not touch it:
 
 `80-70@4` ⟶ `[80, 76, 72]`
+
+## Nuke-Style Step Size Token
+
+Using `x` instead of `@` as the step size token separator also works.
