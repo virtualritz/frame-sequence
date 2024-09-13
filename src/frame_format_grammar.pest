@@ -1,6 +1,6 @@
 PositiveNumber = { ASCII_DIGIT+ }
 Frame = { ("+" | "-")? ~ PositiveNumber }
-StepSymbol = { "@" }
+StepSymbol = { "@" | "x" }
 BinarySequenceSymbol = { "b" }
 FrameRange = { Frame ~ "-" ~ Frame ~ ( StepSymbol ~ ( PositiveNumber | BinarySequenceSymbol ) )? }
 FrameSequencePart = { FrameRange | Frame }
