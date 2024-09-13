@@ -1,6 +1,6 @@
 [package]
 name = "frame-sequence"
-version = "0.1.2"
+version = "0.2.1"
 edition = "2021"
 authors = ["Moritz Moeller <virtualritz@protonmail.com>"]
 keywords = ["graphics", "rendering", "frames", "sequence", "parser"]

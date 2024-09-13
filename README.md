@@ -1,11 +1,13 @@
 # `frame-sequence`
 
+<!-- cargo-rdme start -->
+
 A simple parser for frame sequences strings.
 
-This will parse a `str` describing a sequence of frames into
-a `Vec<isize>` containing individual frame numbers.
+This will parse a [`str`] describing a sequence of frames into
+a [`Vec`]`<`[`isize`]`>` containing individual frame numbers.
 
-Mainly intended/useful for rendering/animation applications.
+Mainly intended/useful for rendering/animation/VFX applications.
 
 ## Example Frame Sequence Strings
 
@@ -39,3 +41,5 @@ the specified step size does not touch it:
 ## Nuke-Style Step Size Token
 
 Using `x` instead of `@` as the step size token separator also works.
+
+<!-- cargo-rdme end -->
